@@ -1,7 +1,15 @@
 import collections
 
 
-Card = collections.namedtuple('Card', ['rank', 'suit'])
+# Card = collections.namedtuple('Card', ['rank', 'suit'])
+class Card:
+  def __init__(self, rank, suit) -> None:
+    self.rank = rank
+    self.suit = suit
+  
+  def __repr__(self):
+    return f"Card({self.rank}, {self.suit})"
+
 
 class FrenchDeck:
   ranks = [str(n) for n in range(2, 11)] + list('JQKA')
@@ -22,4 +30,5 @@ class FrenchDeck:
 # print(beer_card)
 
 deck = FrenchDeck()
-print(len(deck))
+
+print(deck[0])
